@@ -1,4 +1,5 @@
 <{if !$xoops_isuser}>
+	<div id="footer_menu">
 		<a href="http://xoops123.com/">Theme designed by marine/mistgreen</a>&nbsp;|&nbsp;
 		<noscript><a href="<{$xoops_url}>/user.php">login(noscript)</a>&nbsp;|&nbsp;</noscript>
 		<a class="fancybox" href="#theme_login_block" title="<{$smarty.const._THEME_LANGUAGE_LOGIN}>"><{$smarty.const._THEME_LANGUAGE_LOGIN}></a>
@@ -12,51 +13,87 @@
 		<a href="<{$xoops_url}>/admin.php"><{$smarty.const._THEME_LANGUAGE_ADMIN_PAGE}></a>&nbsp;|&nbsp;
 	<{/if}>
 		<a href="http://xoops123.com/">Theme designed by marine/mistgreen</a>
+	</div>
 <{/if}>
 
 <div id="level_1000">
 <{foreach item=block from=$xoops_lblocks name=lbloop}>
 	<{if $block.weight >= 1000 }>
-	<div class="col_1">
-		<{if ! $block.title|strstr:"none"}><h4><{$block.title}></h4><{/if}>
-		<{$block.content}>
-	</div>
+		<{if $block.title|strstr:"[["}>
+			<div class="<{$block.title|xoops_blocktitleclass}>">
+				<{if ! $block.title|strstr:"none"}><h3><{$block.title|xoops_blocktitleclassdel}></h3><{/if}>
+				<{$block.content}>
+			</div>
+		<{else}>
+			<div class="col_1">
+				<{if ! $block.title|strstr:"none"}><h3><{$block.title}></h3><{/if}>
+				<{$block.content}>
+			</div>
+		<{/if}>
 	<{/if}>
 <{/foreach}>
 
 <{foreach item=block from=$xoops_ccblocks name=ccloop}>
 	<{if $block.weight >= 1000 }>
-		<div class="col_4">
-			<{if ! $block.title|strstr:"none"}><h3><{$block.title}></h3><{/if}>
-			<{$block.content}>
-		</div>
+		<{if $block.title|strstr:"[["}>
+			<div class="<{$block.title|xoops_blocktitleclass}>">
+				<{if ! $block.title|strstr:"none"}><h3><{$block.title|xoops_blocktitleclassdel}></h3><{/if}>
+				<{$block.content}>
+			</div>
+		<{else}>
+			<div class="col_4">
+				<{if ! $block.title|strstr:"none"}><h3><{$block.title}></h3><{/if}>
+				<{$block.content}>
+			</div>
+		<{/if}>
 	<{/if}>
 <{/foreach}>
 
 <{foreach item=block from=$xoops_clblocks name=clloop}>
 	<{if $block.weight >= 1000 }>
-		<div class="col_2">
-			<{if ! $block.title|strstr:"none"}><h3><{$block.title}></h3><{/if}>
-			<{$block.content}>
-		</div>
+		<{if $block.title|strstr:"[["}>
+			<div class="<{$block.title|xoops_blocktitleclass}>">
+				<{if ! $block.title|strstr:"none"}><h3><{$block.title|xoops_blocktitleclassdel}></h3><{/if}>
+				<{$block.content}>
+			</div>
+		<{else}>
+			<div class="col_2">
+				<{if ! $block.title|strstr:"none"}><h3><{$block.title}></h3><{/if}>
+				<{$block.content}>
+			</div>
+		<{/if}>
 	<{/if}>
 <{/foreach}>
 
 <{foreach item=block from=$xoops_crblocks name=crloop}>
 	<{if $block.weight >= 1000 }>
-		<div class="col_2">
-			<{if ! $block.title|strstr:"none"}><h3><{$block.title}></h3><{/if}>
-			<{$block.content}>
-		</div>
+		<{if $block.title|strstr:"[["}>
+			<div class="<{$block.title|xoops_blocktitleclass}>">
+				<{if ! $block.title|strstr:"none"}><h3><{$block.title|xoops_blocktitleclassdel}></h3><{/if}>
+				<{$block.content}>
+			</div>
+		<{else}>
+			<div class="col_2">
+				<{if ! $block.title|strstr:"none"}><h3><{$block.title}></h3><{/if}>
+				<{$block.content}>
+			</div>
+		<{/if}>
 	<{/if}>
 <{/foreach}>
 
 <{foreach item=block from=$xoops_rblocks name=rbloop}>
 	<{if $block.weight >= 1000 }>
-	<div class="col_1">
-		<{if ! $block.title|strstr:"none"}><h4><{$block.title}></h4><{/if}>
-		<{$block.content}>
-	</div>
+		<{if $block.title|strstr:"[["}>
+			<div class="<{$block.title|xoops_blocktitleclass}>">
+				<{if ! $block.title|strstr:"none"}><h3><{$block.title|xoops_blocktitleclassdel}></h3><{/if}>
+				<{$block.content}>
+			</div>
+		<{else}>
+			<div class="col_1">
+				<{if ! $block.title|strstr:"none"}><h3><{$block.title}></h3><{/if}>
+				<{$block.content}>
+			</div>
+		<{/if}>
 	<{/if}>
 <{/foreach}>
 </div>
