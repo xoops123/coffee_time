@@ -6,7 +6,22 @@
 
 <h2 class="head"><{if $plugin_params.h2_comments}><{$plugin_params.h2_comments}><{else}><{$smarty.const._MD_D3FORUM_COMMENTSLIST}><{/if}></h2>
 
-<{if $pagenav}><div class="d3f_pagenav"><{$pagenav}></div><{/if}>
+<!-- <{if $pagenav}><div class="d3f_pagenav"><{$pagenav}></div><{/if}> --><!-- marine del 20120820 -->
+
+<{if $pagenav}><!-- marine add 20120820 -->
+<div class="boxNavi" style="text-align:center;">
+<ul class="itemBody">
+<{foreach from=$pagenav item=nav_}>
+<li class=<{$nav_.class}>><span>
+<{if $nav_.url}><a href="<{$nav_.url}>#comment" title="go to page <{$nav_.txt}>"><{$nav_.txt}></a>
+<{else}>
+<{$nav_.txt}>
+<{/if}>
+</span></li>
+<{/foreach}>
+</ul><!-- /itemIBody -->
+</div>
+<{/if}><!-- /boxNavi --><!-- / marine add 20120820 -->
 
 <{if $forum.can_post && $plugin_params.no_form}>
 
@@ -52,5 +67,20 @@
 
 <div class="d3f_link"><a href="<{$mod_url}>/index.php?forum_id=<{$forum.id}>&amp;external_link_id=<{$external_link_id|escape:"url"}>"><{$smarty.const._MD_D3FORUM_LINK_LISTALLCOMMENTS}></a></div>
 
-<{if $pagenav}><div class="d3f_pagenav"><{$pagenav}></div><{/if}>
+<!-- <{if $pagenav}><div class="d3f_pagenav"><{$pagenav}></div><{/if}> --><!-- marine del 20120820 -->
+
+<{if $pagenav}><!-- marine add 20120820 -->
+<div class="boxNavi" style="text-align:center;">
+<ul class="itemBody">
+<{foreach from=$pagenav item=nav_}>
+<li class=<{$nav_.class}>><span>
+<{if $nav_.url}><a href="<{$nav_.url}>#comment" title="go to page <{$nav_.txt}>"><{$nav_.txt}></a>
+<{else}>
+<{$nav_.txt}>
+<{/if}>
+</span></li>
+<{/foreach}>
+</ul><!-- /itemIBody -->
+</div>
+<{/if}><!-- /boxNavi --><!-- / marine add 20120820 -->
 
