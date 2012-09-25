@@ -602,3 +602,9 @@ div.boxNavi .itemBody li.this span {
 	background-color: #CCCCCC;
 }
 
+/* xpwiki */
+
+h2#content_1_5 + p a.ext {
+border: none;
+background: none;
+}
