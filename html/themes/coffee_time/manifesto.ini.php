@@ -5,7 +5,7 @@
 Name="coffee_time"
 Depends=Legacy_RenderSystem,legacy
 Url="http://xoops123.com/"
-Version="0.11"
+Version="0.12"
 
 [Theme]
 RenderSystem=Legacy_RenderSystem
